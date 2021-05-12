@@ -5,30 +5,27 @@
   "dependencies": {
     "@apollo/react-hooks": "^4.0.0",
     "@tailwindcss/postcss7-compat": "^2.1.2",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
+    "@testing-library/jest-dom": "^5.12.0",
+    "@testing-library/react": "^11.2.6",
+    "@testing-library/user-event": "^12.8.3",
     "@types/graphql": "^14.5.0",
-    "@types/jest": "^26.0.15",
-    "@types/node": "^12.0.0",
+    "@types/jest": "^26.0.23",
+    "@types/node": "^12.20.12",
     "@types/react": "^17.0.5",
     "@types/react-dom": "^17.0.4",
     "apollo-boost": "^0.4.9",
-    "autoprefixer": "^9.8.6",
     "graphql": "^15.5.0",
-    "postcss": "^7.0.35",
     "prettier": "^2.3.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
-    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.2",
     "typescript": "^4.2.4",
-    "web-vitals": "^1.0.1"
+    "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "build:style": "tailwind build src/styles/index.css -o src/styles/tailwind.css",
-    "start": "npm run build:style && react-scripts start",
-    "build": "react-scripts build",
+    "start": "npm run tailwind:css && react-scripts start",
+    "tailwind:css": "tailwind build src/css/tailwind.css -c tailwind.config.js -o src/css/index.css",
+    "build": "npm run tailwind:css && react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -51,6 +48,8 @@
     ]
   },
   "devDependencies": {
-    "postcss-cli": "^8.3.1"
+    "autoprefixer": "^9.8.6",
+    "postcss": "^7.0.35",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.1.2"
   }
 }
